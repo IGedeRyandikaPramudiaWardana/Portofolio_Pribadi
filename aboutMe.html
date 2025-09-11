@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Karyawan</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-blue-700 text-white shadow-md">
+        <div class="mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold">About Me</h1>
+            <nav>
+                <a href="index.html" class="px-3 hover:underline">Home</a>
+                <a href="aboutMe.html" class="px-3 hover:underline">About</a>
+                <a href="tugasForm.html" class="px-3 hover:underline">Form</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden">☰</button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-600">
+            <a href="index.html" class="block px-4 py-2 hover:bg-blue-500">Home</a>
+            <a href="aboutMe.html" class="block px-4 py-2 hover:bg-blue-500">About</a>
+            <a href="tugasForm.html" class="block px-4 py-2 hover:bg-blue-500">Form</a>
+
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-5xl mx-auto p-6 bg-white shadow-md rounded-lg mt-6">
+        <h2 class="text-3xl font-bold mb-4">Biodata Saya</h2>
+        <hr class="mb-4">
+
+        <div class="flex gap-6 items-start">
+            <!-- Foto -->
+            <img src="picture/Pas foto edit 4x6.png" alt="Foto Profil" class="w-40 h-45 border rounded-lg shadow">
+
+            <!-- Data Diri -->
+            <div class="space-y-2 my-auto text-2xl">
+                <p><strong>Nama</strong> : I Gede Ryandika Pramudia Wardana</p>
+                <p><strong>NIM</strong> : 2315101012</p>
+                <p><strong>Jenis Kelamin</strong> : Laki-laki</p>
+                <p><strong>Tempat, Tanggal Lahir</strong> : Singaraja, 24 Maret 2005</p>
+                <p><strong>Pekerjaan</strong> : Mahasiswa</p>
+            </div>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Riwayat Pendidikan</h3>
+            <table class="border-collapse border border-gray-400 w-full text-center">
+                <thead class="bg-gray-300">
+                    <tr>
+                        <th rowspan="2" class="border border-gray-400 p-2">Jenjang</th>
+                        <th colspan="2" class="border border-gray-400 p-2">Sekolah</th>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-400 p-2">Nama Sekolah</th>
+                        <th class="border border-gray-400 p-2">Alamat Sekolah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-400 p-2">Sekolah Dasar</td>
+                        <td class="border border-gray-400 p-2">SD Negeri 1 Sangsit</td>
+                        <td class="border border-gray-400 p-2">Desa Sangsit</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-2">Sekolah Menengah Pertama</td>
+                        <td class="border border-gray-400 p-2">SMP Negeri 2 Sawan</td>
+                        <td class="border border-gray-400 p-2">Desa Bungkulan</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-2">Sekolah Menengah Atas</td>
+                        <td class="border border-gray-400 p-2">SMA Negeri 3 Singaraja</td>
+                        <td class="border border-gray-400 p-2">Desa Penarukan</td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-700 text-white text-center p-2 mt-20 ">
+        <p>&copy; 2025, punya Ryandika</p>
+    </footer>
+
+</body>
+</html>
