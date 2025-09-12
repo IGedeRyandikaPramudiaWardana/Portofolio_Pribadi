@@ -1,97 +1,295 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biodata Karyawan</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biodata & Portofolio</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+    .header1 { background-color: #2343B9; }
+    .header2 { background-color: #B9238E; }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-[#dcd8cc] text-gray-800">
 
-    <!-- Header -->
-    <header class="bg-blue-700 text-white shadow-md">
-        <div class="mx-auto p-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold">About Me</h1>
-            <nav class="hidden md:flex space-x-4">
-                <a href="index.html" class="px-3 hover:underline">Home</a>
-                <a href="aboutMe.html" class="px-3 hover:underline">About</a>
-                <a href="tugasForm.html" class="px-3 hover:underline">Form</a>
-            </nav>
-            <button id="menu-btn" class="md:hidden text-2x1 hover:bg-white-500">☰</button>
+  <!-- Header -->
+  <header class="header1 shadow-md">
+    <nav class="flex justify-between items-center px-6 md:px-16 py-4 text-white">
+      <h1 class="text-2xl font-bold">About Me</h1>
+      <ul class="hidden md:flex space-x-8 text-lg items-center">
+        <li><a href="#home" class="hover:underline">Home</a></li>
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#MyProject" class="hover:underline">My Project</a></li>
+        <li><a href="#hobbies" class="hover:underline">Hobi</a></li>
+        <li><a href="#kontak" class="hover:underline">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <aside id="mobile-menu" class="header2 fixed top-0 right-0 w-64 h-full text-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="p-4 flex justify-between items-center">
+      <h2 class="text-lg font-bold">Menu</h2>
+      <button id="close-btn" class="text-2xl">✕</button>
+    </div>
+    <nav class="mt-4 flex flex-col space-y-2 px-2">
+      <a href="#home" class="px-3 py-2 hover:bg-blue-600 rounded">Home</a>
+      <a href="#about" class="px-3 py-2 hover:bg-blue-600 rounded">About</a>
+      <a href="#MyProject" class="px-3 py-2 hover:bg-blue-600 rounded">My Project</a>
+      <a href="#newproject" class="px-3 py-2 hover:bg-blue-600 rounded">Projek Terbaru</a>
+      <a href="#hobbies" class="px-3 py-2 hover:bg-blue-600 rounded">Hobi</a>
+      <a href="#kontak" class="px-3 py-2 hover:bg-blue-600 rounded">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- Hero -->
+  <section id="home" class="px-6 md:px-16 py-16">
+    <div>
+      <h2 class="text-4xl md:text-6xl font-extrabold text-gray-700 leading-tight text-center">
+        <span class="text-pink-500">Selamat Datang!</span> <br/> Ayo Kenalan Lebih Dekat
+      </h2>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="px-6 md:px-16 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-4xl md:text-5xl font-extrabold">
+        Kenalin, <br/><span>Namaku 
+        <span class="text-[#D72BA6]">I Gede Ryandika Pramudia Wardana</span></span>
+      </h2>
+      <p class="mt-6 text-lg text-gray-600">
+        Bisa dipanggil <span class="text-[#D72BA6] font-bold">Ryandika</span> atau <span class="text-[#D72BA6] font-bold">Dika</span>. <br/> 
+        Aku mahasiswa aktif Semester 5 di Universitas Pendidikan Ganesha. <br/>
+        Alasan aku memilih Undiksha adalah karena Undiksha memiliki jurusan yang aku minati yaitu Informatika. 
+        Selain itu Undiksha juga tidak terlalu jauh dari tempat tinggal. <br/>
+        Ini adalah website pertamaku yang aku buat sendiri, jadi mohon maaf apabila kurang rapi yaa hehe.
+      </p>
+    </div>
+    <div class="relative">
+      <div class="flex justify-center">
+        <img src="picture/profil1_2.jpeg" alt="Foto Profil" 
+             class="max-h-[400px] object-contain rounded-3xl overflow-hidden shadow-2xl border-4 border-black"/>
+      </div>
+      <div class="absolute bottom-1 right-5 bg-black text-white p-4 rounded-2xl">
+        <p class="text-sm">🌟 Mahasiswa Aktif</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biodata -->
+  <section>
+    <div class="max-w-5xl mx-auto p-6 bg-white shadow-md rounded-lg mt-6">
+      <h2 class="text-3xl font-bold mb-4 border-b-2 border-gray-400 pb-2">Biodata Saya</h2>
+
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <img src="picture/Pas foto edit 4x6.png" alt="Foto Profil" class="w-40 border rounded-lg shadow"/>
+        <div class="space-y-2 my-auto text-2xl">
+          <p><strong>Nama</strong> : I Gede Ryandika Pramudia Wardana</p>
+          <p><strong>NIM</strong> : 2315101012</p>
+          <p><strong>Jenis Kelamin</strong> : Laki-laki</p>
+          <p><strong>Tempat, Tanggal Lahir</strong> : Singaraja, 24 Maret 2005</p>
+          <p><strong>Pekerjaan</strong> : Mahasiswa</p>
         </div>
-    </header>
+      </div>
 
-    <aside id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-blue-800 text-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-        <div class="p-4 flex justify-between items-center">
-            <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-btn" class="text-2x1 hover:bg-white-500">✕</button>
+      <h3 class="text-xl font-semibold mt-6 mb-2">Riwayat Pendidikan</h3>
+      <table class="border-collapse border border-gray-400 w-full text-center">
+        <thead class="bg-gray-300">
+          <tr>
+            <th rowspan="2" class="border border-gray-400 p-2">Jenjang</th>
+            <th colspan="2" class="border border-gray-400 p-2">Sekolah</th>
+          </tr>
+          <tr>
+            <th class="border border-gray-400 p-2">Nama Sekolah</th>
+            <th class="border border-gray-400 p-2">Alamat Sekolah</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-400 p-2">Sekolah Dasar</td>
+            <td class="border border-gray-400 p-2">SD Negeri 1 Sangsit</td>
+            <td class="border border-gray-400 p-2">Desa Sangsit</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 p-2">Sekolah Menengah Pertama</td>
+            <td class="border border-gray-400 p-2">SMP Negeri 2 Sawan</td>
+            <td class="border border-gray-400 p-2">Desa Bungkulan</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-400 p-2">Sekolah Menengah Atas</td>
+            <td class="border border-gray-400 p-2">SMA Negeri 3 Singaraja</td>
+            <td class="border border-gray-400 p-2">Desa Penarukan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Tentang Saya -->
+  <section id="about" class="px-6 md:px-16 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <div class="flex justify-center">
+      <img src="picture/profil_2_2.jpeg" alt="Foto Tentang Saya"
+           class="h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-black"/>
+    </div>
+    <div>
+      <h3 class="text-3xl md:text-4xl font-bold mb-4">Tentang Saya</h3>
+      <p class="text-gray-700 mb-4">
+        Saya adalah mahasiswa aktif semester 5 di Universitas Pendidikan Ganesha, Program Studi
+        Ilmu Komputer. Saya suka mencoba hal baru di bidang tertentu untuk mencari pengalaman lebih.
+        Sekarang saya mencoba menelusuri dunia Web Development, Artificial Intelligence, dan Kewirausahaan.
+      </p>
+      <p class="text-gray-700 mb-4">
+        Saya percaya bahwa penggunaan teknologi tanpa dibarengi dengan pengalaman dan tanggung jawab
+        hanya akan berakhir sia-sia bahkan dapat merusak masa depan. Oleh karena itu saya ingin agar dapat 
+        membawa dampak positif bagi kehidupan mulai dari diri sendiri, orang terdekat, hingga banyak orang.
+      </p>
+      <p class="text-gray-700">
+        Saya memiliki pengalaman mengikuti 2 organisasi di tingkat lembaga dan fakultas, 
+        serta pernah menjadi calon ketua umum Unit Kegiatan Mahasiswa Catur Undiksha.
+      </p>
+    </div>
+  </section>
+
+  <!-- My Project -->
+  <section id="MyProject" class="px-6 md:px-16 py-16">
+    <h3 class="text-3xl md:text-4xl font-bold mb-10 text-center">Pengalaman Projek Saya Sebelumnya</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <img src="picture/bbminfo.png" class="w-full h-48 object-cover rounded-xl mb-4 border-2 border-black"/>
+        <h4 class="font-semibold text-xl mb-2 text-center">BBM Info</h4>
+        <p class="text-gray-600 text-sm text-center">
+          Sebuah projek Web UI menggunakan Figma. <br/> Untuk Mata Kuliah Interaksi Manusia dan Komputer.
+        </p>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <img src="picture/buildup.png" class="w-full h-48 object-cover rounded-xl mb-4 border-2 border-black"/>
+        <h4 class="font-semibold text-xl mb-2 text-center">Build Up</h4>
+        <p class="text-gray-600 text-sm text-center">
+          Sebuah aplikasi web-based untuk mengukur olahraga di rumah. <br/> Untuk Mata Kuliah Praktikum Basis Data.
+        </p>
+        <div class="flex justify-center mt-3">
+          <a href="https://buildup-seven.vercel.app/"
+             class="bg-[#2BD75C] hover:bg-[#24a047] text-black font-semibold px-5 py-2 rounded-lg transition">
+            Lihat Projek
+          </a>
         </div>
-        <nav class="mt-4 flex flex-col space-y-2 px-4">
-            <a href="index.html" class="px-3 py-2 hover:bg-blue-600 rounded">Home</a>
-            <a href="aboutMe.html" class="px-3 py-2 hover:bg-blue-600 rounded">About</a>
-            <a href="tugasForm.html" class="px-3 py-2 hover:bg-blue-600 rounded">Form</a>
-        </nav>
-    </aside>
-    
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <img src="picture/HMS.png" class="w-full h-48 object-cover rounded-xl mb-4 border-2 border-black"/>
+        <h4 class="font-semibold text-xl mb-2 text-center">Hotel Management System</h4>
+        <p class="text-gray-600 text-sm text-center">
+          Sebuah aplikasi web internal perusahaan perhotelan. <br/> Untuk Mata Kuliah Pemrograman Berorientasi Objek.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Main -->
-    <main class="max-w-5xl mx-auto p-6 bg-white shadow-md rounded-lg mt-6">
-        <h2 class="text-3xl font-bold mb-4 border-b-2 border-gray-400 pb-2">Biodata Saya</h2>
-        <hr class="mb-4">
-
-        <div class="flex flex-col md:flex-row gap-6 items-start">
-            <!-- Foto -->
-            <img src="picture/Pas foto edit 4x6.png" alt="Foto Profil" class="w-40 border rounded-lg shadow">
-
-            <!-- Data Diri -->
-            <div class="space-y-2 my-auto text-2xl">
-                <p><strong>Nama</strong> : I Gede Ryandika Pramudia Wardana</p>
-                <p><strong>NIM</strong> : 2315101012</p>
-                <p><strong>Jenis Kelamin</strong> : Laki-laki</p>
-                <p><strong>Tempat, Tanggal Lahir</strong> : Singaraja, 24 Maret 2005</p>
-                <p><strong>Pekerjaan</strong> : Mahasiswa</p>
-            </div>
+  <!-- Projek Terbaru -->
+  <section id="newproject" class="px-6 md:px-16 py-16 ">
+    <h3 class="text-3xl md:text-4xl font-bold mb-10 text-center">Projek Terbaru Saya</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <h4 class="font-semibold text-xl mb-4 text-center text-[#284ED7]">Tugas Formulir</h4>
+        <p class="text-gray-600 text-sm text-center mb-4">Tugas membuat form sederhana dalam dua versi.</p>
+        <div class="flex justify-center gap-4">
+          <a href="tugasForm.html" class="bg-[#D7B128] hover:bg-[#b08d1f] text-black font-semibold px-5 py-2 rounded-lg transition">Versi JS</a>
+          <a href="tugasForm.php" class="bg-[#D728A5] hover:bg-[#a71e7c] text-white font-semibold px-5 py-2 rounded-lg transition">Versi PHP</a>
         </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <h4 class="font-semibold text-xl mb-4 text-center text-[#284ED7]">Kalkulator Bangun Datar</h4>
+        <p class="text-gray-600 text-sm text-center mb-4">Kalkulator interaktif untuk menghitung luas dan keliling bangun datar.</p>
+        <div class="flex justify-center">
+          <a href="kalkulator.html" class="bg-[#28D75A] hover:bg-[#1fa84b] text-white font-semibold px-5 py-2 rounded-lg transition">Coba Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h3 class="text-xl font-semibold mt-6 mb-2">Riwayat Pendidikan</h3>
-            <table class="border-collapse border border-gray-400 w-full text-center">
-                <thead class="bg-gray-300">
-                    <tr>
-                        <th rowspan="2" class="border border-gray-400 p-2">Jenjang</th>
-                        <th colspan="2" class="border border-gray-400 p-2">Sekolah</th>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-400 p-2">Nama Sekolah</th>
-                        <th class="border border-gray-400 p-2">Alamat Sekolah</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border border-gray-400 p-2">Sekolah Dasar</td>
-                        <td class="border border-gray-400 p-2">SD Negeri 1 Sangsit</td>
-                        <td class="border border-gray-400 p-2">Desa Sangsit</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-400 p-2">Sekolah Menengah Pertama</td>
-                        <td class="border border-gray-400 p-2">SMP Negeri 2 Sawan</td>
-                        <td class="border border-gray-400 p-2">Desa Bungkulan</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-400 p-2">Sekolah Menengah Atas</td>
-                        <td class="border border-gray-400 p-2">SMA Negeri 3 Singaraja</td>
-                        <td class="border border-gray-400 p-2">Desa Penarukan</td>
-                    </tr>
-                </tbody>
-            </table>
+  <!-- Hobi -->
+  <section id="hobbies" class="px-6 md:px-16 py-16">
+    <h3 class="text-3xl md:text-4xl font-bold mb-10 text-center">Hobi Saya</h3>
+    <div class="">
+      <div class="bg-white shadow-lg rounded-xl p-6 border border-gray-200">
+        <img src="picture/knight_king.jpg" alt="Manga Illustration" 
+             class="items-centermax-h-[400px] object-contain rounded-3xl overflow-hidden shadow-2xl border-4 border-black"/>
+        <h4 class="font-semibold text-xl mb-2 text-center text-[#D728A5]">Membaca Manga</h4>
+        <p class="text-gray-600 text-sm text-center">
+          Saya suka membaca manga dengan berbagai genre, mulai dari action, fantasy, hingga slice of life. 
+          Bagi saya, membaca manga bukan hanya hiburan, tetapi juga cara belajar nilai kehidupan dan kreativitas.
+        </p>
+      </div>
+  </section>
 
-    </main>
-    <script src="js/Menu.js"></script>
+
+    <section id="kontak" class="px-6 md:px-16 py-16 bg-[#284ED7] text-gray-800">
+      <h3 class="text-3xl md:text-4xl font-bold mb-6 text-center">
+        Hubungi Saya
+      </h3>
+      <div class="max-w-xl mx-auto text-center">
+        <p class="text-gray-300 mb-6">
+          Ingin berdiskusi atau bekerja sama? Hubungi melalui sosial 
+          media dan kontak berikut.
+        </p>
+
+        <!-- Sosial Media -->
+        <div class="flex justify-center space-x-6">
+          <!-- Instagram -->
+          <a
+            href="https://instagram.com/ryandika06"
+            target="_blank"
+            class="hover:text-pink-400 transition"
+          >
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"
+              />
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <!-- Gmail -->
+            <a
+                href="mailto:ryandika@student.undiksha.ac.id"
+                target="_blank"
+                class="hover:text-red-500 transition"
+            >
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 12.713l11.985-9.713H.015L12 12.713zm0 2.574L.015 5.287V20.25c0 .414.336.75.75.75h21.47c.414 0 .75-.336.75-.75V5.287L12 15.287z"
+                />
+                </svg>
+            </a>
+          <!-- WhatsApp -->
+          <a
+            href="https://wa.me/6281915622360"
+            target="_blank"
+            class="hover:text-green-400 transition"
+          >
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 32 32">
+              <path
+                d="M16.003 2.003C8.28 2.003 2 8.282 2 16.003c0 2.828.736 5.588 2.136 8.016L2 30l6.181-2.09c2.36 1.29 5.04 1.97 7.822 1.97h.001c7.722 0 14.001-6.28 14.001-14.001 0-3.74-1.456-7.253-4.101-9.898a13.902 13.902 0 00-9.9-4.078zm0 25.63c-2.437 0-4.82-.65-6.906-1.879l-.494-.293-3.667 1.241 1.21-3.578-.32-.55a12.37 12.37 0 01-1.876-6.566c0-6.854 5.577-12.43 12.43-12.43 3.32 0 6.438 1.294 8.777 3.634a12.33 12.33 0 013.653 8.76c0 6.853-5.577 12.43-12.43 12.43zm7.14-9.247c-.39-.195-2.31-1.14-2.668-1.27-.357-.133-.617-.195-.877.195s-1.005 1.27-1.233 1.529c-.228.26-.456.293-.846.098-.39-.195-1.644-.606-3.13-1.93-1.157-1.033-1.937-2.31-2.165-2.7-.228-.39-.024-.601.171-.796.176-.175.39-.455.585-.683.195-.228.26-.39.39-.65.13-.26.065-.488-.033-.683-.098-.195-.877-2.116-1.2-2.9-.316-.759-.636-.655-.877-.667-.228-.01-.488-.012-.749-.012-.26 0-.683.098-1.04.488-.357.39-1.365 1.332-1.365 3.247s1.397 3.77 1.59 4.03c.195.26 2.746 4.2 6.654 5.889.93.402 1.656.642 2.222.82.932.298 1.782.256 2.453.155.747-.111 2.31-.944 2.635-1.856.325-.912.325-1.694.228-1.856-.098-.162-.357-.26-.747-.455z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#284ED7] text-center text-gray-800 py-6 text-sm0">
+        <p>&copy; 2025, Ryandika</p>
+    </footer>
+
+  <script src="js/Menu.js"></script>
 </body>
 
-<footer class="bg-blue-700 text-white text-center p-2 mt-20 ">
-        <p>&copy; 2025, punya Ryandika</p>
-</footer>
 
 </html>

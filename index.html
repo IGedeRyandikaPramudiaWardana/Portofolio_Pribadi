@@ -1,74 +1,167 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Portofolio</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/index.css">
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="bg-gray-50 text-gray-800 font-sans">
-        <header class="bg-blue-700 text-white shadow-md">
-        <div class="mx-auto p-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold">About Me</h1>
-            <nav class="hidden md:flex space-x-4">
-                <a href="index.html" class="px-3 hover:underline">Home</a>
-                <a href="aboutMe.html" class="px-3 hover:underline">About</a>
-                <a href="tugasForm.html" class="px-3 hover:underline">Form</a>
-            </nav>
-            <button id="menu-btn" class="md:hidden text-2x1 hover:bg-white-500">☰</button>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Starlight Landing Page</title>
+    <meta name="description" content="A modern and responsive landing page.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Tailwind CSS CDN -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="./src/output.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body.bgUtama {
+            background: linear-gradient(135deg, #011775 10%, #28D75A 120%);
+            color: white;
+        }
+
+        /* Styling for the mobile menu backdrop */
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+        }
+    </style>
+</head>
+<body class="bgUtama">
+    <div class="relative isolate">
+        <!-- Background Gradient -->
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#D728A5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
         </div>
-    </header>
 
-    <aside id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-blue-800 text-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-        <div class="p-4 flex justify-between items-center">
-            <h2 class="text-lg font-bold">Menu</h2>
-            <button id="close-btn" class="text-2x1 hover:bg-white-500">✕</button>
-        </div>
-        <nav class="mt-4 flex flex-col space-y-2 px-4">
-            <a href="index.html" class="px-3 py-2 hover:bg-blue-600 rounded">Home</a>
-            <a href="aboutMe.html" class="px-3 py-2 hover:bg-blue-600 rounded">About</a>
-            <a href="tugasForm.html" class="px-3 py-2 hover:bg-blue-600 rounded">Form</a>
-        </nav>
-    </aside>
-
-        <main class="isi max-w-5xl mx-auto p-4 ">
-            <h1 class="text-2x1 font-semibold text-center mb-6">
-                Selamat datang di website pertama saya!
-            </h1>
-
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="p-6 bg-white rounded-lg shadow-md text-center">
-                    <h2 class="text-lg font-medium mb-4">
-                        Cari tahu lebih tentang saya dengan klik tombol dibawah
-                    </h2>
-                    <a href="aboutMe.html" class="btn">About Me</a>
+        <!-- Header -->
+        <!-- <header class="absolute inset-x-0 top-0 z-50">
+            <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Get Started</span>
+                    </a>
                 </div>
+                <div class="flex lg:hidden">
+                    <button type="button" id="open-menu-button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                            <path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">About Me</a>
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">My Project</a>
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Contact</a>
+                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Social Media</a>
+                </div>
+                
+            </nav> -->
 
-                <div class="p-6 bg-white rounded-lg shadow-md text-center">
-                    <h2 class="text-lg font-medium mb-4">
-                        Tugas membuat formulir sederhana
-                    </h2>
-                    <a href="tugasForm.html" class="btn">Formulir</a>
+            <!-- Mobile menu dialog -->
+            <dialog id="mobile-menu" class="m-0 ml-auto h-full w-full max-w-sm bg-transparent backdrop:transition-opacity backdrop:duration-300">
+                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-gray-100/10">
+                    <!-- <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Landing Page</span>
+                        </a>
+                        <button type="button" id="close-menu-button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-200">
+                            <span class="sr-only">Close menu</span>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-6 w-6">
+                                <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div> -->
+                    <div class="mt-6 flow-root">
+                        <div class="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
+                            <div class="space-y-2 py-6">
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">About Me</a>
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">My Project</a>
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Contact</a>
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5">Social Media</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+        </header>
+
+        <!-- Main Hero Section -->
+        <main>
+            <div class="relative px-6 pt-14 lg:px-8">
+                <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                    <div class="text-center">
+                        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">Selamat Datang di Website Pertama Saya!</h1>
+                        <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+                            Saya adalah seorang pelajar yang sedang menempuh pendidikan di Universitas Pendidikan Ganesha. 
+                            Saya sedang mencoba membuat website pertama saya. 
+                            Ayo mulai perjalanan ini bersama!</p>
+                        <div class="mt-10 flex items-center justify-center gap-x-6">
+                            <a href="aboutMe.html" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Mari mulai perjalanan!</a>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            
-            
         </main>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="js/Menu.js" async defer></script>
-    </body>
-    <footer class="bg-blue-700 text-white text-center p-2 mt-20 ">
-        <p>&copy; 2025, punya Ryandika</p>
+
+        <!-- Background Gradient for bottom -->
+        <!-- <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div> -->
+    </div>
+
+    <script>
+        // JavaScript to handle the mobile menu dialog
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const openMenuButton = document.getElementById('open-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+
+            // Function to open the dialog
+            function openMenu() {
+                if (mobileMenu && typeof mobileMenu.showModal === 'function') {
+                    mobileMenu.showModal();
+                }
+            }
+
+            // Function to close the dialog
+            function closeMenu() {
+                if (mobileMenu && typeof mobileMenu.close === 'function') {
+                    mobileMenu.close();
+                }
+            }
+            
+            // Event listeners for the buttons
+            if (openMenuButton) {
+                openMenuButton.addEventListener('click', openMenu);
+            }
+
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', closeMenu);
+            }
+            
+            // Close the dialog if the user clicks on the backdrop
+            if(mobileMenu) {
+                mobileMenu.addEventListener('click', (event) => {
+                    if (event.target === mobileMenu) {
+                        closeMenu();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+<footer>
+    <footer class=" text-white text-center p-2 mt-20 ">
+        <p>&copy; 2025, Ryandika</p>
     </footer>
+</footer>
 </html>

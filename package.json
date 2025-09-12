@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13"
+  },
+  "name": "portofolio",
+  "version": "1.0.0",
+  "description": "Nama: I Gede Ryandika Pramudia Wardana  \r NIM: 2315101012  \r Kelas: 5A",
+  "main": "index.js",
+  "devDependencies": {
+    "tailwindcss": "^4.1.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

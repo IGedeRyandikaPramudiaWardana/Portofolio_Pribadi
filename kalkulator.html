@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Bangun Datar (jQuery)</title>
+  <link rel="stylesheet" href="src/output.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body { font-family: "Poppins", sans-serif; }
+    .header1 { background-color: #2343B9; }
+    .header2 { background-color: #B9238E; }
+  </style>
+</head>
+
+
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="header1 shadow-md">
+    <nav class="flex justify-between items-center px-6 md:px-16 py-4 text-white">
+      <h1 class="text-2xl font-bold">About Me</h1>
+      <ul class="hidden md:flex space-x-8 text-lg items-center">
+        <li><a href="aboutMe.html" class="hover:underline">Home</a></li>
+        <li><a href="aboutMe.html" class="hover:underline">About</a></li>
+        <li><a href="aboutMe.html#project" class="hover:underline">My Project</a></li>
+        <li><a href="aboutMe.html#hobbies" class="hover:underline">Hobi</a></li>
+        <li><a href="aboutMe.html#kontak" class="hover:underline">Contact</a></li>
+      </ul>
+      <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+    </nav>
+  </header>
+
+    <aside id="mobile-menu" class="header2 fixed top-0 right-0 w-64 h-full text-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+      <div class="p-4 flex justify-between items-center">
+        <h2 class="text-lg font-bold">Menu</h2>
+        <button id="close-btn" class="text-2xl">✕</button>
+      </div>
+      <nav class="mt-4 flex flex-col space-y-2 px-2">
+        <li><a href="aboutMe.html" class="hover:underline">Home</a></li>
+        <li><a href="aboutMe.html" class="hover:underline">About</a></li>
+        <li><a href="aboutMe.html#project" class="hover:underline">My Project</a></li>
+        <li><a href="aboutMe.html#hobbies" class="hover:underline">Hobi</a></li>
+        <li><a href="aboutMe.html#kontak" class="hover:underline">Contact</a></li>
+      </nav>
+    </aside>
+    
+
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center p-6">
+    <div class="w-full max-w-md bg-white p-6 rounded-xl shadow-lg">
+      <h1 class="text-2xl font-bold mb-4 text-center">Kalkulator Bangun Datar</h1>
+
+      <!-- Mode Hitung -->
+      <div class="mb-4">
+        <label for="mode" class="block text-sm font-medium text-gray-700">Pilih Mode Hitung</label>
+        <select id="mode" class="mt-1 block w-full px-3 py-2 border rounded-md">
+          <option value="luas">Luas</option>
+          <option value="keliling">Keliling</option>
+        </select>
+      </div>
+
+      <!-- Bangun Datar -->
+      <div class="mb-4">
+        <label for="shape" class="block text-sm font-medium text-gray-700">Pilih Bangun Datar</label>
+        <select id="shape" class="mt-1 block w-full px-3 py-2 border rounded-md">
+          <option value="persegi">Persegi</option>
+          <option value="persegi-panjang">Persegi Panjang</option>
+          <option value="segitiga">Segitiga</option>
+          <option value="jajar-genjang">Jajar Genjang</option>
+          <option value="trapesium">Trapesium</option>
+          <option value="lingkaran">Lingkaran</option>
+          <option value="belah-ketupat">Belah Ketupat</option>
+        </select>
+      </div>
+
+      <!-- Input Dinamis -->
+      <div id="input-container" class="space-y-3 mb-4"></div>
+
+      <!-- Tombol -->
+      <button id="hitung" class="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700">
+        Hitung
+      </button>
+
+      <!-- Hasil -->
+      <div class="flex mt-4 text-lg font-medium text-gray-800 justify-center">
+        Hasil: <span id="hasil" class="px-2">-</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white text-center p-2">
+    <p>&copy; 2025, punya Ryandika</p>
+  </footer>
+
+
+
+  <script>
+    const inputFields = {
+      "persegi": {
+        "luas": ["Sisi"],
+        "keliling": ["Sisi"]
+      },
+      "persegi-panjang": {
+        "luas": ["Panjang", "Lebar"],
+        "keliling": ["Panjang", "Lebar"]
+      },
+      "segitiga": {
+        "luas": ["Alas", "Tinggi"],
+        "keliling": ["Sisi A", "Sisi B", "Sisi C"]
+      },
+      "jajar-genjang": {
+        "luas": ["Alas", "Tinggi"],
+        "keliling": ["Sisi Miring", "Alas"]
+      },
+      "trapesium": {
+        "luas": ["Sisi Atas", "Sisi Bawah", "Tinggi"],
+        "keliling": ["Sisi A", "Sisi B", "Sisi C", "Sisi D"]
+      },
+      "lingkaran": {
+        "luas": ["Jari-jari"],
+        "keliling": ["Jari-jari"]
+      },
+      "belah-ketupat": {
+        "luas": ["Diagonal 1", "Diagonal 2"],
+        "keliling": ["Sisi"]
+      }
+    };
+
+    // Render input
+    function renderInputs() {
+      let shape = $("#shape").val();
+      let mode = $("#mode").val();
+      let fields = inputFields[shape][mode];
+
+      $("#input-container").empty();
+
+      $.each(fields, function(i, f) {
+        let fieldHtml = `
+          <div>
+            <label class="block text-sm font-medium text-gray-700">${f}</label>
+            <input type="number" data-field="${f}" placeholder="${f}" 
+              class="mt-1 block w-full px-3 py-2 border rounded-md" />
+          </div>`;
+        $("#input-container").append(fieldHtml);
+      });
+    }
+
+    // Hitung hasil
+    function hitung() {
+      let shape = $("#shape").val();
+      let mode = $("#mode").val();
+      let values = [];
+
+      $("#input-container input").each(function() {
+        values.push(parseFloat($(this).val()));
+      });
+
+      let result = 0;
+      switch (shape) {
+        case "persegi":
+          result = mode === "luas" ? values[0] ** 2 : 4 * values[0];
+          break;
+        case "persegi-panjang":
+          result = mode === "luas" ? values[0] * values[1] : 2 * (values[0] + values[1]);
+          break;
+        case "segitiga":
+          result = mode === "luas" ? 0.5 * values[0] * values[1] : values[0] + values[1] + values[2];
+          break;
+        case "jajar-genjang":
+          result = mode === "luas" ? values[0] * values[1] : 2 * (values[0] + values[1]);
+          break;
+        case "trapesium":
+          result = mode === "luas"
+            ? 0.5 * (values[0] + values[1]) * values[2]
+            : values[0] + values[1] + values[2] + values[3];
+          break;
+        case "lingkaran":
+          result = mode === "luas"
+            ? Math.PI * values[0] ** 2
+            : 2 * Math.PI * values[0];
+          break;
+        case "belah-ketupat":
+          result = mode === "luas"
+            ? 0.5 * values[0] * values[1]
+            : 4 * values[0];
+          break;
+      }
+
+      $("#hasil").text(isNaN(result) ? "-" : result.toFixed(2));
+    }
+
+    // Event listeners pakai jQuery
+    $(document).ready(function() {
+      renderInputs(); // render awal
+
+      $("#mode, #shape").on("change", renderInputs);
+      $("#hitung").on("click", hitung);
+    });
+  </script>
+
+  <script src="js/Menu.js"></script>
+</body>
+</html>
